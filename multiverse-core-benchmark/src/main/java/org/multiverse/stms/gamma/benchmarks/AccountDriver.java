@@ -1,5 +1,6 @@
 package org.multiverse.stms.gamma.benchmarks;
 
+import java.security.SecureRandom;
 import org.benchy.BenchmarkDriver;
 import org.benchy.TestCaseResult;
 import org.multiverse.TestThread;
@@ -73,7 +74,7 @@ public class AccountDriver extends BenchmarkDriver {
             this.readThreads = readThreads;
             this.writeThreads = writeThreads;
             transferCount = readCount = writeCount = 0;
-            random = new Random();
+            random = new SecureRandom();
         }
 
         public void setPhase(int phase) {
