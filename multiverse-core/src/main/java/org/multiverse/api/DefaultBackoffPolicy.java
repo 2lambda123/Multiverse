@@ -1,5 +1,6 @@
 package org.multiverse.api;
 
+import java.security.SecureRandom;
 import java.util.Random;
 
 import static java.util.concurrent.locks.LockSupport.parkNanos;
@@ -34,7 +35,7 @@ public final class DefaultBackoffPolicy implements BackoffPolicy {
      * @throws NullPointerException if unit is null.
      */
     public DefaultBackoffPolicy(long minDelayNs) {
-        Random random = new Random();
+        Random random = new SecureRandom();
         slotTimes = new long[1000];
         this.minDelayNs = minDelayNs;
 
